@@ -1,0 +1,32 @@
+.Sidebar{
+    width: max-content;
+    box-shadow: 0 3px 4px;
+    transition-property: width;
+    transition-timing-function: ease-in;
+    transition-duration: 2s;
+}
+
+.Side-icons > img{
+    width: 30px;
+    height: 30px;
+    margin-right: 0.6em;
+}
+.Side-icons{
+    display: flex;
+    padding: 1em;
+}
+
+.Subs_Title{
+    padding: 1em;
+}
+
+.Subscribers img{
+    border-radius: 50%;
+}
+
+p{
+    display: none;
+}
+.Visible p{
+    display: block;
+}

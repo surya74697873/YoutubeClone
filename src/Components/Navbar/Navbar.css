@@ -1,7 +1,8 @@
 .Navbar{
     display: flex;
     justify-content: space-between;
-    padding: .5em;
+    padding: 1em .5em;
+    box-shadow: 0 0 5px ;
 }
 
 img{
@@ -9,6 +10,9 @@ img{
     height: 35px;
 }
 
+.Menubar{
+    margin-left: .4em;
+}
 
 .Left, .Upload, .Right, .Middle, .Youtube_Title, .Search_bar{
     display: flex;
@@ -34,13 +38,15 @@ p{
 }
 
 .Search_bar{
-    border: .5px solid;
+    box-shadow: 0 0 5px;
+    flex: 1;
 }
 
 input{
     border: none;
     outline: none;
     padding-inline: 1em;
+    flex: 1;
 }
 
 .Search_bar .Mic{
@@ -48,15 +54,12 @@ input{
 }
 
 .Search_bar, .Mic, .Upload{
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.5);
     border-radius: 1em;
 }
 
 .Middle{
     max-width: 500px;
-}
-
-input, .Search_bar{
     flex: 1;
 }
 

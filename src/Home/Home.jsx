@@ -1,9 +1,17 @@
+import Sidebar from '../Components/Sidebar/Sidebar';
+import PropTypes from "prop-types"
 import './Home.css'
 
-const Home = () => {
+const Home = ({sideBar}) => {
   return (
-    <div>Home</div>
+    <div className="Home">
+          <Sidebar sideBar={sideBar} />
+    </div>
   )
 }
 
-export default Home
+Home.propTypes = {
+  sideBar : PropTypes.bool.isRequired,
+}
+
+export default Home;
