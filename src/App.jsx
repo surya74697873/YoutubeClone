@@ -1,20 +1,9 @@
-import { useState } from 'react'
-import { BrowserRouter as Router} from 'react-router-dom'
-import './App.css'
+import Navbar from "./Components/Navbar/Navbar"
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
-      <Router>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-      </Router>
+    <Navbar />
     </>
   )
 }

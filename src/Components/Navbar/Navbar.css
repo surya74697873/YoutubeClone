@@ -1,0 +1,69 @@
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: .5em;
+}
+
+img{
+    width: fit-content;
+    height: 35px;
+}
+
+
+.Left, .Upload, .Right, .Middle, .Youtube_Title, .Search_bar{
+    display: flex;
+}
+
+.Left, .Youtube_Title, .Middle, .Right{
+    gap: 10px;
+}
+
+.User_logo > img{
+    border-radius: 50%;
+}
+
+p{
+    font-family: sans-serif;
+    font-weight: bold;
+    align-self: center;
+}
+
+.Search_bar, input{
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.Search_bar{
+    border: .5px solid;
+}
+
+input{
+    border: none;
+    outline: none;
+    padding-inline: 1em;
+}
+
+.Search_bar .Mic{
+    padding-left: 1em;
+}
+
+.Search_bar, .Mic, .Upload{
+    background-color: lightgray;
+    border-radius: 1em;
+}
+
+.Middle{
+    max-width: 500px;
+}
+
+input, .Search_bar{
+    flex: 1;
+}
+
+.Upload{
+    padding-inline: 7px;
+}
+
+.Left, .Right, .Middle{
+    align-items: center;
+}
