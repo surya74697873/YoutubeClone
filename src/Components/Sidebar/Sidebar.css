@@ -1,9 +1,6 @@
 .Sidebar{
     width: max-content;
-    box-shadow: 0 3px 4px;
-    transition-property: width;
-    transition-timing-function: ease-in;
-    transition-duration: 2s;
+    box-shadow: 0 1px 5px;
 }
 
 .Side-icons > img{
@@ -14,6 +11,7 @@
 .Side-icons{
     display: flex;
     padding: 1em;
+    margin-left: .15em;
 }
 
 .Subs_Title{

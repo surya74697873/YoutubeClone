@@ -1,4 +1,4 @@
-import './video.css'
+import './Video.css'
 
 const Video = () => {
   return (
