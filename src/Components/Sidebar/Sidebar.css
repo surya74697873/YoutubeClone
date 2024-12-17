@@ -22,7 +22,7 @@
     border-radius: 50%;
 }
 
-p{
+.Sidebar p{
     display: none;
 }
 .Visible p{

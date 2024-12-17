@@ -1,0 +1,41 @@
+.Feed{
+    gap: 1em 1.3em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.Video_Desc{
+    display: flex;
+    gap: .5em;
+}
+
+.Channel_logo > img{
+    border-radius: 50%;
+    margin-top: .5em;
+}
+
+.Collection img{
+    width: 100%;
+}
+
+:where(h3, h2, p){
+    margin-top: .3em;
+}
+
+
+.Collection h2{
+    font-size: 1.1rem;
+}
+
+.Collection h3{
+    font-size: 1rem;
+}
+
+.Collection p{
+    font-size: .9em;
+}
+.Video_Thumbnail{
+    border-radius: 1em;
+    overflow: hidden;
+}
+

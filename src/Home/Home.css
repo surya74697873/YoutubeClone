@@ -1,0 +1,8 @@
+.Home{
+    display: flex;
+}
+
+.Container{
+    flex: 1;
+    padding: 1em;
+}
