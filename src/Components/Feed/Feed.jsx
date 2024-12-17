@@ -1,11 +1,12 @@
 import "./Feed.css";
 import image from "../../assets/thumbnail1.png";
 import chnl_logo from "../../assets/user.jpg";
+import { Link } from "react-router-dom";
 
 const Feed = () => {
   return (
     <div className="Feed">
-         <div className="Collection">
+         <Link to=" video/53/2233" className="Collection">
         <div className="Video_Thumbnail">
           <img src={image} alt="" />
         </div>
@@ -21,7 +22,7 @@ const Feed = () => {
             <p>1M views &bull; 10000 years ago</p>
           </div>
         </div>
-      </div>
+      </Link>
       <div className="Collection">
         <div className="Video_Thumbnail">
           <img src={image} alt="" />
