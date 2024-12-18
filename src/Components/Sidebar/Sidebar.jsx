@@ -21,6 +21,7 @@ import PropTypes from "prop-types"
 const Sidebar = ({sideBar, category, setCategory}) => {
   
 
+  console.log(category);
   
   return (
    <div className={`Sidebar ${sideBar ? 'Visible' : ''}`}>

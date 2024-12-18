@@ -1,11 +1,10 @@
 import "./Feed.css";
-import image from "../../assets/thumbnail1.png";
-import chnl_logo from "../../assets/user.jpg";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { convertViewCount, key } from "../../data";
 import { useEffect, useState } from "react";
 import moment from "moment";
+import Oval from "react-loading-icons/dist/esm/components/oval";
 
 const Feed = ({ category }) => {
   const [data, setData] = useState([]);
@@ -18,18 +17,17 @@ const Feed = ({ category }) => {
     );
     const items = await res.json();
     setData(items.items);
-    console.log(data);
     setLoad(false)
   };
 
   useEffect(() => {
     apiCall();
-  }, []);
+  }, [category]);
 
   console.log(data);
 
   if(load)
-    return <h1>Loading....</h1>
+    return <div className="Loading"> <Oval strokeWidth={'5px'} stroke="black" /></div>
 
   return (
     <div className="Feed">
