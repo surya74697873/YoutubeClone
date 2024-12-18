@@ -1,0 +1,45 @@
+.Recommented{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Recommented_Video{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1em;
+}
+
+.RVideo_Desc{
+    display: flex;
+    gap: 10px;
+}
+
+.RVideo_Thumbnail{
+    width: 500px;
+}
+.RVideo_Thumbnail  > img{
+    width: 100%;
+    border-radius: 1em;
+    object-fit: cover;
+    object-position: center;
+}
+
+.RChannel_logo > img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.RChannel_desc > h2{
+    font-size: 1em;
+}
+
+.RChannel_desc > h3{
+    font-size: .8em;
+    font-weight: lighter;
+}
+
+.RChannel_desc > p{
+    font-size: .7em;
+    font-weight: lighter;
+}

@@ -3,6 +3,8 @@
   src: url('./assets/fonts/Fira_Sans/FiraSans-Regular.ttf');
 }
 *{
+  color: black;
+  text-decoration: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;

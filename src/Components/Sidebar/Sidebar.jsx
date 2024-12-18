@@ -18,37 +18,38 @@ import './Sidebar.css'
 
 import PropTypes from "prop-types"
 
-const Sidebar = ({sideBar}) => {
-  console.log(sideBar);
+const Sidebar = ({sideBar, category, setCategory}) => {
+  
+
   
   return (
    <div className={`Sidebar ${sideBar ? 'Visible' : ''}`}>
     <div className="Options">
-      <div className="Side-icons">
+      <div className={`Side-icons ${category == 0 ? "active" : ""}`} onClick={() => setCategory(0)}>
         <img src={home} alt="Home" /> <p>Home</p>
       </div>
-      <div className="Side-icons">
+      <div className={`Side-icons ${category == 20 ? "active" : ""}`} onClick={() => setCategory(20)}>
         <img src={gaming} alt="Gaming" /> <p>Gaming</p>
       </div>
-      <div className="Side-icons">
+      <div className={`Side-icons ${category == 2 ? "active" : ""}`} onClick={() => setCategory(2)}>
         <img src={automobiles} alt="Automobiles" /> <p>Automobiles</p>
       </div>
-      <div className="Side-icons">
+      <div className={`Side-icons ${category == 17 ? "active" : ""}`} onClick={() => setCategory(17)}>
         <img src={sports} alt="Sports" /> <p>Sports</p>
       </div>
-      <div className="Side-icons">
+      <div className={`Side-icons ${category == 24 ? "active" : ""}`} onClick={() => setCategory(24)}>
         <img src={entertainment} alt="Entertainment" /> <p>Entertainment</p>
       </div>
-      <div className="Side-icons">
+      <div className={`Side-icons ${category == 28 ? "active" : ""}`} onClick={() => setCategory(28)}>
         <img src={tech} alt="Technology" /> <p>Techonology</p>
       </div>
-      <div className="Side-icons">
+      <div className={`Side-icons ${category == 10 ? "active" : ""}`} onClick={() => setCategory(10)}>
         <img src={music} alt="Music" /> <p>Music</p>
       </div>
-      <div className="Side-icons">
+      <div className={`Side-icons ${category == 22 ? "active" : ""}`} onClick={() => setCategory(22)}>
         <img src={blogs} alt="Blogs" /> <p>Blogs</p>
       </div>
-      <div className="Side-icons">
+      <div className={`Side-icons ${category == 25 ? "active" : ""}`} onClick={() => setCategory(25)}>
         <img src={news} alt="News" /> <p>News</p>
       </div>
       <hr />
@@ -82,6 +83,8 @@ const Sidebar = ({sideBar}) => {
 
 Sidebar.propTypes = {
   sideBar : PropTypes.bool.isRequired,
+  category : PropTypes.any.isRequired,
+  setCategory : PropTypes.func.isRequired
 }
 
 export default Sidebar

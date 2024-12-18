@@ -2,13 +2,18 @@ import Sidebar from "../Components/Sidebar/Sidebar";
 import PropTypes from "prop-types";
 import "./Home.css";
 import Feed from "../Components/Feed/Feed";
+import { useState } from "react";
 
 const Home = ({ sideBar }) => {
+
+  const [category, setCategory] = useState(0);
+
+
   return (
     <div className="Home">
-      <Sidebar sideBar={sideBar} />
+      <Sidebar sideBar={sideBar} category={category} setCategory={setCategory}/>
       <div className="Container">
-        <Feed />
+        <Feed category={category}/>
       </div>
     </div>
   );
