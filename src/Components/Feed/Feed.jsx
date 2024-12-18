@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Feed = () => {
   return (
     <div className="Feed">
-         <Link to=" video/53/2233" className="Collection">
+         <Link to="/video/53/2233" className="Collection">
         <div className="Video_Thumbnail">
           <img src={image} alt="" />
         </div>
