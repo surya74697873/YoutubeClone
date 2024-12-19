@@ -11,5 +11,5 @@ export function convertViewCount(count){
         return Math.floor(count/1000) + "T"
     }
     else
-        return count;
+        return count+"";
 }

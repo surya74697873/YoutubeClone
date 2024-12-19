@@ -1,23 +1,44 @@
 import "./PlayVideo.css";
-import video1 from "../../assets/videos_subs/video.mp4";
 import user from "../../assets/user.jpg";
 import user_profile from "../../assets/videos_subs/profile.png"
 import like from "../../assets/videos_subs/like.png";
 import dislike from "../../assets/videos_subs/dislike.png";
 import share from "../../assets/videos_subs/share.png";
 import list from "../../assets/videos_subs/playlist.png";
+import { convertViewCount } from "../../data";
+import { useEffect, useState } from "react";
+import { key } from "../../data";
+import PropTypes from "prop-types"
+import moment from "moment";
 
-const PlayVideo = () => {
+const PlayVideo = ({videoId}) => {
+  const [videoDetails, setVideoDetails] = useState(null)
+
+  async function videoDetailAPI() {
+    const res = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${key}`)
+
+    if(!res.ok){ console.log(res); return }
+    const data = await res.json();
+    setVideoDetails(data.items[0])
+  }
+
+  useEffect(() => {
+    videoDetailAPI()
+  },[videoId])
+
+  console.log(videoDetails);
+  
+
   return (
     <div className="PlayVideo">
-      <video src={video1} controls autoPlay muted></video>
-      <h2>Best Channel to learn coding that help you to be a web developer</h2>
+      <iframe src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+      <h2>{videoDetails ? videoDetails.snippet.title : ""}</h2>
       <div className="ChannelDesc">
         <div className="Channel">
           <div className="Channel_Profile">
             <img src={user} alt=""></img>
             <div className="Channel_Subscribers">
-              <h2>Tamil Nadu</h2>
+              <h2>{videoDetails ? videoDetails.snippet.channelTitle : ""}</h2>
               <p>1M Subscribers</p>
             </div>
             <button>Subscribe</button>
@@ -25,7 +46,7 @@ const PlayVideo = () => {
           <div className="Others">
             <div className="LikeandDislike">
               <div className="Like">
-                  <img src={like} alt="Like" /> <span>67</span>
+                  <img src={like} alt="Like" /> <span>{convertViewCount(Number(videoDetails?.statistics.likeCount))}</span>
               </div>
               <div className="Dislike">
                 <img src={dislike} alt="Dislike" />
@@ -42,8 +63,11 @@ const PlayVideo = () => {
         </div>
         <hr />
         <div className="Video_Description">
-          <p>Subscribe to Our TamilNadu Channel</p>
-          TamilNadu is born before 10000 Years ago
+          <div>
+            <span><b>{convertViewCount(videoDetails?.statistics.viewCount)} views {moment(videoDetails?.snippet.publishedAt).fromNow()}</b></span>
+          </div>
+          <p>{}</p>
+          <p>{videoDetails ? videoDetails.snippet.localized.description : ""}</p>
         </div>
       </div>
       <hr />
@@ -144,5 +168,9 @@ const PlayVideo = () => {
     </div>
   );
 };
+
+PlayVideo.propTypes = {
+  videoId : PropTypes.any.isRequired,
+}
 
 export default PlayVideo;
