@@ -7,15 +7,21 @@ import notify_icon from "../../assets/notification.png";
 import youtube_icon from "../../assets/youtube.png";
 import "./Navbar.css";
 import PropTypes from "prop-types"
+import { useNavigate } from "react-router-dom"
 
 const Navbar = ({ setSideBar }) => {
+  const navigate = useNavigate()
+  
+  function reDirectHomePage(){
+    navigate("/")
+  }
   return (
     <div className="Navbar">
       <div className="Left">
         <div className="Menubar rcimg" onClick={() => setSideBar(prev => !prev)}>
           <img src={menu_bar} alt="Menu bar" />
         </div>
-        <div className="Youtube_Title rcimg">
+        <div className="Youtube_Title rcimg" onClick={reDirectHomePage}>
           <img src={youtube_icon} alt="youtube icon" />
           <p>YouTube</p>
         </div>
