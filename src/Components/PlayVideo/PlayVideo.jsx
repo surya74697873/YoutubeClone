@@ -13,6 +13,9 @@ import moment from "moment";
 
 const PlayVideo = ({videoId}) => {
   const [videoDetails, setVideoDetails] = useState(null)
+  const [channelDetails, setChannelDetails] = useState(null);
+  const [comments, setComments] = useState([])
+  const [channelId, setChannelId] = useState("")
 
   async function videoDetailAPI() {
     const res = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${key}`)
@@ -20,14 +23,45 @@ const PlayVideo = ({videoId}) => {
     if(!res.ok){ console.log(res); return }
     const data = await res.json();
     setVideoDetails(data.items[0])
+    setChannelId(data.items[0].snippet.channelId)
   }
 
   useEffect(() => {
     videoDetailAPI()
+    commentsAPI()
   },[videoId])
 
   console.log(videoDetails);
   
+  async function channelDetailAPI() {
+    const url = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${key}`;
+
+    const res = await fetch(url);
+    if (!res.ok) {
+      console.log(res);
+      return;
+    }
+    const data = await res.json();
+    setChannelDetails(data.items[0]);
+  }
+
+  useEffect(() => {
+    channelDetailAPI()
+  },[channelId])
+
+  console.log(channelDetails)
+
+
+  async function commentsAPI() {
+    const url = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${videoId}=${key}`
+
+    const res = await fetch(url)
+
+    const data = await res.json()
+
+    console.log(data);
+    
+  }
 
   return (
     <div className="PlayVideo">
@@ -38,8 +72,8 @@ const PlayVideo = ({videoId}) => {
           <div className="Channel_Profile">
             <img src={user} alt=""></img>
             <div className="Channel_Subscribers">
-              <h2>{videoDetails ? videoDetails.snippet.channelTitle : ""}</h2>
-              <p>1M Subscribers</p>
+              <h2>{channelDetails?.snippet.localized.title}</h2>
+              <p>{convertViewCount(channelDetails?.statistics.subscriberCount)}</p>
             </div>
             <button>Subscribe</button>
           </div>
@@ -73,84 +107,6 @@ const PlayVideo = ({videoId}) => {
       <hr />
       <div className="Comments">
         <h2>Comments</h2>
-        <div className="Comment">
-          <div className="User_Profile">
-            <img src={user_profile} alt="" />
-          </div>
-          <div className="Comment_Text">
-            <h2>@TamilNadu</h2>
-            <p>Bruce running towards that dust and chaos shows how mentally strong he is</p>
-            <div className="buttons">
-              <button><img src={like} alt="Like" /></button>
-              <button><img src={dislike} alt="DisLike" /> </button>
-            </div>
-          </div>
-        </div>
-        <div className="Comment">
-          <div className="User_Profile">
-            <img src={user_profile} alt="" />
-          </div>
-          <div className="Comment_Text">
-            <h2>@TamilNadu</h2>
-            <p>Bruce running towards that dust and chaos shows how mentally strong he is</p>
-            <div className="buttons">
-              <button><img src={like} alt="Like" /></button>
-              <button><img src={dislike} alt="DisLike" /> </button>
-            </div>
-          </div>
-        </div>
-        <div className="Comment">
-          <div className="User_Profile">
-            <img src={user_profile} alt="" />
-          </div>
-          <div className="Comment_Text">
-            <h2>@TamilNadu</h2>
-            <p>Bruce running towards that dust and chaos shows how mentally strong he is</p>
-            <div className="buttons">
-              <button><img src={like} alt="Like" /></button>
-              <button><img src={dislike} alt="DisLike" /> </button>
-            </div>
-          </div>
-        </div>
-        <div className="Comment">
-          <div className="User_Profile">
-            <img src={user_profile} alt="" />
-          </div>
-          <div className="Comment_Text">
-            <h2>@TamilNadu</h2>
-            <p>Bruce running towards that dust and chaos shows how mentally strong he is</p>
-            <div className="buttons">
-              <button><img src={like} alt="Like" /></button>
-              <button><img src={dislike} alt="DisLike" /> </button>
-            </div>
-          </div>
-        </div>
-        <div className="Comment">
-          <div className="User_Profile">
-            <img src={user_profile} alt="" />
-          </div>
-          <div className="Comment_Text">
-            <h2>@TamilNadu</h2>
-            <p>Bruce running towards that dust and chaos shows how mentally strong he is</p>
-            <div className="buttons">
-              <button><img src={like} alt="Like" /></button>
-              <button><img src={dislike} alt="DisLike" /> </button>
-            </div>
-          </div>
-        </div>
-        <div className="Comment">
-          <div className="User_Profile">
-            <img src={user_profile} alt="" />
-          </div>
-          <div className="Comment_Text">
-            <h2>@TamilNadu</h2>
-            <p>Bruce running towards that dust and chaos shows how mentally strong he is</p>
-            <div className="buttons">
-              <button><img src={like} alt="Like" /></button>
-              <button><img src={dislike} alt="DisLike" /> </button>
-            </div>
-          </div>
-        </div>
         <div className="Comment">
           <div className="User_Profile">
             <img src={user_profile} alt="" />

@@ -34,7 +34,7 @@ const Feed = ({ category }) => {
       {data.map((item, index) => (
         <Link key={index} to={`/video/${item.snippet.categoryId}/${item.id}`} className="Collection">
           <div className="Video_Thumbnail">
-            <img src={item.snippet.thumbnails.standard.url} alt="" />
+            <img src={item.snippet.thumbnails.high?.url} alt="" />
           </div>
           <div className="Video_Desc">
             <div className="Channel_desc">
