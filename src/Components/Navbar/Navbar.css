@@ -1,75 +1,102 @@
 .Navbar{
     display: flex;
     justify-content: space-between;
-    padding: 1em .5em;
+    padding: 1em .9em;
     box-shadow: 0 0 5px ;
     position:sticky;
     top: 0;
     background-color: white;
-}
-
-.Navbar img{
-    width: fit-content;
-    height: 35px;
-}
-
-.Menubar{
-    margin-left: .4em;
-}
-
-.Left, .Upload, .Right, .Middle, .Youtube_Title, .Search_bar{
-    display: flex;
-}
-
-.Left, .Youtube_Title, .Middle, .Right{
     gap: 10px;
 }
 
-.User_logo > img{
-    border-radius: 50%;
+.Navbar img{
+    width: 30px;
+    height: 30px;
+    background: inherit;
 }
 
-p{
-    font-family: sans-serif;
-    font-weight: bold;
-    align-self: center;
-}
-
-.Search_bar, .Navbar input{
-    border-radius: 1em;
-    overflow: hidden;
-}
-
-.Search_bar{
-    box-shadow: 0 0 5px;
+.Left, .Right{
     flex: 1;
-}
-
-.Navbar input{
-    border: none;
-    outline: none;
-    padding-inline: 1em;
-    flex: 1;
-}
-
-.Search_bar .Mic{
-    padding-left: 1em;
-}
-
-.Search_bar, .Mic, .Upload{
-    background-color: rgba(211, 211, 211, 0.5);
-    border-radius: 1em;
 }
 
 .Middle{
-    max-width: 500px;
+    flex: 2;
+    justify-content: center;
+}
+
+.Right{
+    justify-content: end;
+}
+
+.Left, .Middle, .Right, .Youtube_Title, .Upload{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.Youtube_Title > p{
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+.Youtube_Title > img, .User_logo> img{
+    height: 35px;
+    width: 35px;
+}
+
+input{
+    border: none;
+    outline: none;
+    font-size: 1em;
+    width:  90%;
+    padding-inline: 1em;
+    border-radius: 1em;
+}
+
+.Search_bar{
+    display: flex;
+    border : .1px solid;
+    border-radius: 1em;
     flex: 1;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.Search_bar > img{
+    padding: 0.2em;
+}
+
+
+.Mic{
+    overflow: hidden;;
+    border-radius: .7em;
+}
+
+.Notification > img, .Mic > img, .Search_bar > img, .Upload > img{
+    width: 30px;
+    height: 30px;
+}
+
+.Notification, .Upload, .Search_bar, .Mic{
+    background-color: rgba(231, 231, 231, .8);
+}
+
+.Upload,.Notification{
+    overflow: hidden;
+    height: 100%;
+    border-radius: 1em;
 }
 
 .Upload{
-    padding-inline: 7px;
+    gap: 0;
 }
 
-.Left, .Right, .Middle{
-    align-items: center;
+.Upload > p{
+    padding-inline: 5px;
+    font-weight: bold;
 }
+
+.User_logo > img{
+    border-radius: 1em;
+}
+

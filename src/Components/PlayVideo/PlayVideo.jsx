@@ -1,5 +1,4 @@
 import "./PlayVideo.css";
-import user from "../../assets/user.jpg";
 import user_profile from "../../assets/videos_subs/profile.png"
 import like from "../../assets/videos_subs/like.png";
 import dislike from "../../assets/videos_subs/dislike.png";
@@ -14,7 +13,6 @@ import moment from "moment";
 const PlayVideo = ({videoId}) => {
   const [videoDetails, setVideoDetails] = useState(null)
   const [channelDetails, setChannelDetails] = useState(null);
-  const [comments, setComments] = useState([])
   const [channelId, setChannelId] = useState("")
 
   async function videoDetailAPI() {
@@ -70,7 +68,7 @@ const PlayVideo = ({videoId}) => {
       <div className="ChannelDesc">
         <div className="Channel">
           <div className="Channel_Profile">
-            <img src={user} alt=""></img>
+            <img src={channelDetails?.snippet.thumbnails?.high.url} alt=""></img>
             <div className="Channel_Subscribers">
               <h2>{channelDetails?.snippet.localized.title}</h2>
               <p>{convertViewCount(channelDetails?.statistics.subscriberCount)}</p>

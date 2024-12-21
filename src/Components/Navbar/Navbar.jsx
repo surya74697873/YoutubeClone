@@ -18,35 +18,35 @@ const Navbar = ({ setSideBar }) => {
   return (
     <div className="Navbar">
       <div className="Left">
-        <div className="Menubar rcimg" onClick={() => setSideBar(prev => !prev)}>
+        <div className="Menubar" onClick={() => setSideBar(prev => !prev)}>
           <img src={menu_bar} alt="Menu bar" />
         </div>
-        <div className="Youtube_Title rcimg" onClick={reDirectHomePage}>
+        <div className="Youtube_Title" onClick={reDirectHomePage}>
           <img src={youtube_icon} alt="youtube icon" />
           <p>YouTube</p>
         </div>
       </div>
 
       <div className="Middle">
-        <div className="Search_bar rcimg">
+        <div className="Search_bar">
           <input type="text" placeholder="Search" />
           <img src={search_icon} alt="Search Bar" />
         </div>
-        <div className="Mic rcimg">
+        <div className="Mic">
           <img src={mic} alt="Microphone" />
         </div>
       </div>
 
       <div className="Right">
-        <div className="Upload rcimg">
+        <div className="Upload">
           <img src={upload_ico} alt="Upload Icon" />
           <p>Create</p>
         </div>
 
-        <div className="Notification rcimg">
+        <div className="Notification">
           <img src={notify_icon} alt="Notification" />
         </div>
-        <div className="User_logo rcimg">
+        <div className="User_logo">
           <img src={user_icon} alt="User Image" />
         </div>
       </div>
