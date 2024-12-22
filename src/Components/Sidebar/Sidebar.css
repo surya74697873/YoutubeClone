@@ -4,14 +4,14 @@
 }
 
 .Side-icons > img{
-    width: 30px;
-    height: 30px;
-    margin-right: 0.6em;
+    width: 25px;
+    height: 25px;
 }
 .Side-icons{
     display: flex;
     padding: 1em;
     margin-left: .15em;
+    gap: 10px;
 }
 
 .Subs_Title{
@@ -24,6 +24,7 @@
 
 .Sidebar p{
     display: none;
+    font-weight: bold;
 }
 .Visible p{
     display: block;

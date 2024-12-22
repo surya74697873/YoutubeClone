@@ -1,45 +1,33 @@
 .Recommented{
-    width: 30%;
+    width: 50vw;
     display: flex;
     flex-direction: column;
 }
 
 .Recommented_Video{
     display: flex;
-    gap: 10px;
+    gap: 15px;
     margin-bottom: 1em;
 }
 
-.RVideo_Desc{
-    display: flex;
-    gap: 10px;
-}
-
-.RVideo_Thumbnail{
-    width: 500px;
-}
-.RVideo_Thumbnail  > img{
-    width: 100%;
+.RVideo_Thumbnail > img{
+    width: 200px;
+    height: 140px;
     border-radius: 1em;
-    object-fit: cover;
-    object-position: center;
 }
 
-.RChannel_logo > img{
-    width: 40px;
-    border-radius: 50%;
+.RVideo_desc > h2, .RVideo_desc > h3, .RVideo_desc > p{
+    margin-bottom: .5em;
 }
 
-.RChannel_desc > h2{
+.RVideo_desc > h2{
     font-size: 1em;
 }
 
-.RChannel_desc > h3{
-    font-size: .8em;
-    font-weight: lighter;
+.RVideo_desc > h3{
+    font-size: 0.9em;
 }
 
-.RChannel_desc > p{
-    font-size: .7em;
-    font-weight: lighter;
+.RVideo_desc > p{
+    font-size: .8em;
 }

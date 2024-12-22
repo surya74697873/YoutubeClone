@@ -7,9 +7,11 @@ import notify_icon from "../../assets/notification.png";
 import youtube_icon from "../../assets/youtube.png";
 import "./Navbar.css";
 import PropTypes from "prop-types"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react";
 
 const Navbar = ({ setSideBar }) => {
+  const [keyword, setKeyword] = useState("")
   const navigate = useNavigate()
   
   function reDirectHomePage(){
@@ -29,8 +31,10 @@ const Navbar = ({ setSideBar }) => {
 
       <div className="Middle">
         <div className="Search_bar">
-          <input type="text" placeholder="Search" />
+          <input type="text" placeholder="Search" onChange={(e) => setKeyword(e.target.value)}/>
+          <Link to={`/search/${keyword}`}>
           <img src={search_icon} alt="Search Bar" />
+          </Link>
         </div>
         <div className="Mic">
           <img src={mic} alt="Microphone" />

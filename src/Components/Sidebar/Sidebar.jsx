@@ -20,9 +20,6 @@ import PropTypes from "prop-types"
 
 const Sidebar = ({sideBar, category, setCategory}) => {
   
-
-  console.log(category);
-  
   return (
    <div className={`Sidebar ${sideBar ? 'Visible' : ''}`}>
     <div className="Options">
@@ -56,7 +53,7 @@ const Sidebar = ({sideBar, category, setCategory}) => {
       <hr />
     </div>
     <div className="Subscribers">
-      <p className="Subs_Title">SubScribers</p>
+      <p className="Subs_Title">Subscribers</p>
       <div className="Side-icons">
         <img src={pewdiepie} alt="PewDiePie" />
         <p>PewDiePie</p>

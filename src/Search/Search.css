@@ -1,0 +1,39 @@
+.Search{
+    padding: 2.5em 4em;
+}
+
+.Searched_Video{
+    margin-bottom: 2em;
+}
+
+.Searched_Video,.SChannel_Logo{
+    display: flex;
+    gap: 1em;
+}
+
+.SVideo_Thumbnail > img{
+    width: 400px;
+    border-radius: 1em;
+}
+
+.SChannel_Logo{
+    align-items: center;
+}
+
+.SChannel_Logo > img{
+    width: 40px;
+    border-radius: 1em;
+}
+
+.SVideo_desc > h2,.SChannel_Logo,.SVideo_desc p {
+    margin-bottom: 0.5em;
+}
+
+.SVideo_desc > h2{
+    font-size: 1.4em;
+}
+
+#SV_Desc{
+    height: 40px;
+    overflow: hidden;
+}
