@@ -108,6 +108,10 @@ button span{
   font-size: 1.2em;
 }
 
+.Video_Description > p, .Comment_Text > p{
+  width: 100%;
+}
+
 @media screen and (max-width : 500px) {
   iframe{
     width: 100%;
