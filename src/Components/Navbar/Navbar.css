@@ -1,4 +1,4 @@
-.Navbar{
+.Normal{
     display: flex;
     justify-content: space-between;
     padding: 1em .9em;
@@ -100,3 +100,55 @@ input{
     border-radius: 1em;
 }
 
+.Mini_Searchbar_window, .Mini_Search_icon{
+    display: none;
+}
+
+.Youtube_Title,.Menubar,img[alt="Search Bar"]{
+    cursor: pointer;
+}
+
+@media only screen and (max-width : 600px) {
+    
+    .Mic,.Upload{
+        display: none;
+    }
+}
+
+@media screen and (max-width : 400px) {
+    .Normal{
+        padding: .4em;
+    }
+
+    .Youtube_Title{
+        font-size: .8em;
+    }
+
+    .Normal img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .Middle input,.Search_bar{
+        display: none;
+    }
+
+    .Middle{
+        justify-content: right;
+    }
+
+    .Mini_Search_icon{
+        display: block;
+    }
+
+    .Mini_Searchbar_window{
+        display: none;
+        width: 100%;
+        border: 1px solid;
+    }
+
+    .activeSearchBar{
+        display: flex;
+    }
+
+}

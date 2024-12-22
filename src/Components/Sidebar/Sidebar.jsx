@@ -21,33 +21,33 @@ import PropTypes from "prop-types"
 const Sidebar = ({sideBar, category, setCategory}) => {
   
   return (
-   <div className={`Sidebar ${sideBar ? 'Visible' : ''}`}>
+   <div className={`Sidebar ${sideBar ? 'activeSideBar' : ''}`}>
     <div className="Options">
-      <div className={`Side-icons ${category == 0 ? "active" : ""}`} onClick={() => setCategory(0)}>
+      <div className={`Side-icons ${category == 0 ? "activeSide-icons" : ""}`} onClick={() => setCategory(0)}>
         <img src={home} alt="Home" /> <p>Home</p>
       </div>
-      <div className={`Side-icons ${category == 20 ? "active" : ""}`} onClick={() => setCategory(20)}>
+      <div className={`Side-icons ${category == 20 ? "activeSide-icons" : ""}`} onClick={() => setCategory(20)}>
         <img src={gaming} alt="Gaming" /> <p>Gaming</p>
       </div>
-      <div className={`Side-icons ${category == 2 ? "active" : ""}`} onClick={() => setCategory(2)}>
+      <div className={`Side-icons ${category == 2 ? "activeSide-icons" : ""}`} onClick={() => setCategory(2)}>
         <img src={automobiles} alt="Automobiles" /> <p>Automobiles</p>
       </div>
-      <div className={`Side-icons ${category == 17 ? "active" : ""}`} onClick={() => setCategory(17)}>
+      <div className={`Side-icons ${category == 17 ? "activeSide-icons" : ""}`} onClick={() => setCategory(17)}>
         <img src={sports} alt="Sports" /> <p>Sports</p>
       </div>
-      <div className={`Side-icons ${category == 24 ? "active" : ""}`} onClick={() => setCategory(24)}>
+      <div className={`Side-icons ${category == 24 ? "activeSide-icons" : ""}`} onClick={() => setCategory(24)}>
         <img src={entertainment} alt="Entertainment" /> <p>Entertainment</p>
       </div>
-      <div className={`Side-icons ${category == 28 ? "active" : ""}`} onClick={() => setCategory(28)}>
+      <div className={`Side-icons ${category == 28 ? "activeSide-icons" : ""}`} onClick={() => setCategory(28)}>
         <img src={tech} alt="Technology" /> <p>Techonology</p>
       </div>
-      <div className={`Side-icons ${category == 10 ? "active" : ""}`} onClick={() => setCategory(10)}>
+      <div className={`Side-icons ${category == 10 ? "activeSide-icons" : ""}`} onClick={() => setCategory(10)}>
         <img src={music} alt="Music" /> <p>Music</p>
       </div>
-      <div className={`Side-icons ${category == 22 ? "active" : ""}`} onClick={() => setCategory(22)}>
+      <div className={`Side-icons ${category == 22 ? "activeSide-icons" : ""}`} onClick={() => setCategory(22)}>
         <img src={blogs} alt="Blogs" /> <p>Blogs</p>
       </div>
-      <div className={`Side-icons ${category == 25 ? "active" : ""}`} onClick={() => setCategory(25)}>
+      <div className={`Side-icons ${category == 25 ? "activeSide-icons" : ""}`} onClick={() => setCategory(25)}>
         <img src={news} alt="News" /> <p>News</p>
       </div>
       <hr />

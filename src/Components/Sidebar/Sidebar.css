@@ -12,6 +12,7 @@
     padding: 1em;
     margin-left: .15em;
     gap: 10px;
+    cursor: pointer;
 }
 
 .Subs_Title{
@@ -25,11 +26,32 @@
 .Sidebar p{
     display: none;
     font-weight: bold;
+    align-content: center;
 }
-.Visible p{
+
+.activeSideBar p{
     display: block;
 }
 
-.active > img{
+.activeSide-icons > img{
     border-bottom: 3px solid red;
+}
+
+@media screen and (max-width : 400px) {
+    
+    .Side-icons{
+        margin: 0;
+        padding: .7em  ;
+    }
+
+    .Sidebar p{
+        font-size: .8em;
+    }
+
+    .activeSideBar{
+        position: absolute;
+        z-index: 1;
+        background-color: white;
+    }
+    
 }

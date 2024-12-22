@@ -102,3 +102,10 @@ iframe{
 button span{
   font-size: 1.2em;
 }
+
+@media screen and (max-width : 500px) {
+  iframe{
+    width: 100%;
+    height: 40vh;
+  }
+}
