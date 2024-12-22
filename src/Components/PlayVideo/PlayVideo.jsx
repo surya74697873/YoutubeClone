@@ -65,10 +65,12 @@ const PlayVideo = ({videoId}) => {
       <div className="ChannelDesc">
         <div className="Channel">
           <div className="Channel_Profile">
-            <img src={channelDetails?.snippet.thumbnails?.default.url} alt=""></img>
+            <div className="Channel_Profile_Details">
+              <img src={channelDetails?.snippet.thumbnails?.default.url} alt=""></img>
             <div className="Channel_Subscribers">
               <h2>{channelDetails?.snippet.localized.title}</h2>
               <p>{convertViewCount(channelDetails?.statistics.subscriberCount)}</p>
+            </div>
             </div>
             <button id="Subscribe">Subscribe</button>
           </div>
@@ -76,7 +78,7 @@ const PlayVideo = ({videoId}) => {
             <div className="LikeandDislike">
               <div className="Like">
                   <img src={like} alt="Like" /> <span>{convertViewCount(Number(videoDetails?.statistics.likeCount))}</span>
-              </div>
+              </div> |
               <div className="Dislike">
                 <img src={dislike} alt="Dislike" />
               </div>

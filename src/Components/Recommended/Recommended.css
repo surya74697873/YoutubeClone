@@ -31,3 +31,30 @@
 .RVideo_desc > p{
     font-size: .8em;
 }
+
+
+@media screen and (max-width : 1100px) {
+    .Recommented{
+        margin-top: 5em;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width : 550px) {
+    
+    .Recommented_Video{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .RVideo_Thumbnail > img{
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    .RVideo_desc{
+        padding: 0.8em;
+    }
+}

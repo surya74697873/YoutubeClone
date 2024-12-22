@@ -10,18 +10,19 @@ iframe{
 
 .Channel{
   justify-content: space-between;
+  gap: 10px;
 }
 
 .PlayVideo img{
   width: 30px;
 }
 
-.Channel, .Channel_Profile,.Others,.LikeandDislike,.Like,.Share{
+.Channel, .Channel_Profile_Details, .Channel_Profile.Channel_Profile,.Others,.LikeandDislike,.Like,.Share{
   display: flex;
   align-items: center;
 }
 
-.Channel_Profile, .Others{
+.Channel_Profile,.Channel_Profile_Details, .Others{
   gap: 15px;
 }
 
@@ -55,7 +56,7 @@ iframe{
 
 .Comment{
   display: flex;
-  margin-top: 0.7em;
+  margin-top: 1em;
   gap: 10px;
 }
 
@@ -99,6 +100,10 @@ iframe{
   margin-bottom: 1em;
 }
 
+.Channel_Profile_Details{
+  flex: 1;
+}
+
 button span{
   font-size: 1.2em;
 }
@@ -107,5 +112,39 @@ button span{
   iframe{
     width: 100%;
     height: 40vh;
+    border-radius: 0;
   }
+
+  .PlayVideo > h2{
+    margin-left: 0.6em;
+  }
+
+  .LikeandDislike{
+    gap: 1em;
+  }
+
+  .LikeandDislike img,.Share img{
+    width: 20px;
+  }
+
+  .Channel{
+    flex-direction: column;
+  }
+
+  .Channel_Profile, .Others{
+    width: 100%;
+  }
+
+  .Others{
+    justify-content: space-between;
+  }
+  
+  .ChannelDesc,.Comments{
+    padding: 1em;
+  }
+
+  .ChannelDesc hr{
+    margin-top: 1em;
+  }
+
 }
