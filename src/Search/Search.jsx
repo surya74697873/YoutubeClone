@@ -20,6 +20,7 @@ const Search = () => {
       console.error(res);
       return;
     }
+    setVideoDetails([])
     const resData = await res.json();
     setVideoList(resData.items);
   }
@@ -88,9 +89,9 @@ const Search = () => {
 
   return (
     <div className="Search">
-      {videoDetails.map((video) => (
+      {videoDetails.map((video, index) => (
         <Link
-          key={video.videoID}
+          key={index}
           to={`/video/${video.videoCategoryID}/${video.videoID}`}
           className="Searched_Video"
         >
