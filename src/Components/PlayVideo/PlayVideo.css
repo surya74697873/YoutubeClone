@@ -96,6 +96,11 @@ iframe{
   font-size: 1em;
 }
 
+.Comment_Text > p{
+  width: 100%;
+  word-wrap: break-w9rld;
+}
+
 .Video_Description > div{
   margin-bottom: 1em;
 }
@@ -106,10 +111,6 @@ iframe{
 
 button span{
   font-size: 1.2em;
-}
-
-.Video_Description > p, .Comment_Text > p{
-  width: 100%;
 }
 
 @media screen and (max-width : 500px) {
