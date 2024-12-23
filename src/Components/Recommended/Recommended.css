@@ -18,6 +18,7 @@
 
 .RVideo_desc > h2, .RVideo_desc > h3, .RVideo_desc > p{
     margin-bottom: .5em;
+    overflow-wrap: break-word;
 }
 
 .RVideo_desc > h2{

@@ -75,6 +75,7 @@ iframe{
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow: hidden;
 }
 
 .User_Profile > img{
@@ -98,7 +99,7 @@ iframe{
 
 .Comment_Text > p{
   width: 100%;
-  word-wrap: break-w9rld;
+  overflow-wrap: break-word;
 }
 
 .Video_Description > div{
@@ -150,6 +151,20 @@ button span{
 
   .ChannelDesc hr{
     margin-top: 1em;
+  }
+  
+  .Comment_Text_Post{
+    flex-direction: column;
+    width: max-content;
+    align-items: flex-start;
+  }
+  
+  .Comment_Text_Post > p{
+    font-size: 0.8em;
+  }
+  
+  .Video_Description > p{
+    overflow-wrap: break-word;
   }
 
 }

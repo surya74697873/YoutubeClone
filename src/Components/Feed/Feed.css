@@ -26,6 +26,8 @@
 
 .Collection h2{
     font-size: 1.1rem;
+    text-wrap: balance;
+    overflow-wrap: break-word;
 }
 
 .Collection h3{
