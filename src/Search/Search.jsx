@@ -20,6 +20,7 @@ const Search = () => {
       console.error(res);
       return;
     }
+    setVideoDetails([])
     const resData = await res.json();
     setVideoList(resData.items);
   }
